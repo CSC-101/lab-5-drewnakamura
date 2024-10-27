@@ -13,7 +13,6 @@ class Time:
         self.minute = minute
         self.second = second
 
-
     # Provide a developer-friendly string representation of the object.
     # input: Time for which a string representation is desired. 
     # output: string representation
@@ -23,7 +22,13 @@ class Time:
     # input: Time against which to compare
     # input: Another value to compare to the Time
     # output: boolean indicating equality
+    def __eq__(self, other:Any) -> bool:
+        return (other is self or
+                type(other) == Time and self.hour is other.hour and
+                self.minute is other.minute and self.second is other.second)
 
+    def __repr__(self) ->str:
+        return "The time is Hour: {} Minute: {} Second: {}".format(str(self.hour), str(self.minute), str(self.second))
 
 
 
@@ -53,3 +58,7 @@ class Point:
                 type(other) == Point and
                 math.isclose(self.x, other.x) and
                 math.isclose(self.y, other.y))
+
+
+
+
