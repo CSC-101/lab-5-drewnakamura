@@ -13,29 +13,6 @@ class Time:
         self.minute = minute
         self.second = second
 
-
-    #This function inputs its own and another time, then returns the total combined time.
-    #Input other as Time
-    #Output newTime as Time
-    #def time_add(self, other):
-        #return newTime
-    #Input(Time(10, 10,10), Time(20, 20, 20)
-    #Output(TIme(30, 30, 30)
-    def time_add(self , other):
-
-        second = self.second + other.second
-        minutes = self.minute + other.minute
-        hours = self.hour + other.hour
-        if(second >= 60):
-            minutes+= second//60
-            second = second%60
-        if(minutes >= 60):
-            hours += minutes//60
-            minutes = minutes%60
-
-        newTime = Time(hours, minutes, second)
-        return newTime
-
     # Provide a developer-friendly string representation of the object.
     # input: Time for which a string representation is desired. 
     # output: string representation
